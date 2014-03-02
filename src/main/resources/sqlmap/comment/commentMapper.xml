@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tistory.tazz009.comment.service.impl.CommentMapper">
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache" />
+	<select id="listComment" 
+			resultType="CommentVO">
+
+select COMMENT_NO
+	   , USER_ID
+	   , COMMENT_CONTENT
+	   , REG_DATE 
+  from COMMENT
+
+	</select>
+	<insert id="insertComment" 
+			parameterType="CommentVO">
+
+insert into COMMENT (
+	COMMENT_NO
+	, USER_ID
+	, COMMENT_CONTENT
+	, REG_DATE
+) values (
+	#{commentNo}
+	, #{userId}
+	, #{commentContent}
+	, #{regDate}
+)
+
+	</insert>
+</mapper>

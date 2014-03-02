@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<setting name="jdbcTypeForNull" value="VARCHAR"/>
+	</settings>
+	<!-- 
+		Type Alias를 패키지 단위로 등록하기.
+		클래스명과 다른 Alias를 사용하고 싶다면
+		@Alias 애노테이션 (Annotation)을 사용할 수 있다.
+	 -->
+	<typeAliases>
+		<package name="com.tistory.tazz009"/>
+	</typeAliases>	
+	
+</configuration>
